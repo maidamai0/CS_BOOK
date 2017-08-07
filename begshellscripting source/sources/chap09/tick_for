@@ -1,0 +1,9 @@
+
+echo "Using backticks in a for loop."
+
+for filename in `ls -1 /usr/local`
+do
+    echo $filename
+done
+
+

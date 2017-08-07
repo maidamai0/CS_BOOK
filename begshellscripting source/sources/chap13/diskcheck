@@ -1,0 +1,50 @@
+#!/bin/sh
+
+# Output warnings if disks are too full (in percentage
+# terms) or have too little space available.
+
+# This script goes through all the mounted filesystems
+# and checks each to see if the disk is nearly full,
+# reporting only on those disks that warrant more attention.
+
+
+# Set thresholds
+min_free=4000
+
+max_in_use=55
+
+
+# Get a list of all file systems.
+filesystems=`df -k | grep -v Use | grep -v none | awk '{ print $6 }'`
+
+for filesystem in $filesystems
+do
+    # Cache results for this file system.
+    entry=`df -k $filesystem | tail -1`  
+
+    # Split out the amount of space free as well as in-use percentage.
+    free=`echo $entry | cut -d' ' -f4`
+    in_use=`echo $entry | cut -d' ' -f5 | cut -d'%' -f1 `
+
+    # Check the file system percent in use.
+    if [ $(expr "$in_use > $max_in_use" ) ]
+    then
+        echo "$filesystem has only $free KB free at $in_use%."
+    else
+        # Check the available space against threshold.
+        # Only make this check if the in use is OK.
+
+        result=$( echo "
+            scale=2   /* two decimal places */
+            print $free < $min_free" | bc)
+
+
+        #if [ $(expr "$free < $min_free" ) ]
+        if [ $(expr "$result != 0" ) ]
+        then
+            echo "$filesystem has only $free KB free."
+        fi
+    fi
+
+done
+

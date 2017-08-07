@@ -1,0 +1,40 @@
+#!/bin/sh
+
+# Launches OpenOffice.org to create a TPS report reminder.
+# Pass the name of the report file and the date required
+# on the command line, in order. Both arguments
+# are optional.
+#
+
+dir=`pwd`
+
+if [ $# -lt 1 ] 
+then
+    filename="$dir/tpsreport.doc"
+else
+    filename="$dir/$1"
+fi
+
+if [ $# -lt 2 ] 
+then
+    date_required=today
+else
+    date_required=$2
+fi
+
+# Build the message as one long line.
+msg=$(tr "\n" " " <<EndOfText
+"Please complete all TPS reports and have them
+on my desk by EOB $date_required."
+EndOfText
+)
+
+
+
+# Send the message
+echo "[$msg]"
+
+macro=macro:///shellscripting.scriptingmodule.CreateTpsReport
+ooffice -quickstart "${macro}(\"$filename\", $msg)"
+
+echo "Message sent"

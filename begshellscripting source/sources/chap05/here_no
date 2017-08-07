@@ -1,0 +1,9 @@
+filename="test1"
+
+cat <<'QuotedEndMarker'
+
+With quotes around the here document marker,
+you can include variable references such
+as $HOME, $filename, and $USER.
+
+QuotedEndMarker

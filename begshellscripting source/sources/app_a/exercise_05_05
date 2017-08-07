@@ -1,0 +1,11 @@
+# First script, outputs a second, that in turn, outputs a third.
+
+cat <<'End1'
+
+    # This is a comment in a script.
+    cat <<'End2'
+        echo "This is the next output script."
+        echo "It doesn't do anything."
+End2
+
+End1

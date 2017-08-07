@@ -1,0 +1,26 @@
+
+echo "Please enter your favorite operating system, "
+echo -n "linux, macosx, windows, amigados, or beos: "
+read os
+
+case $os in
+
+linux)
+    echo "Way cool, you like Linux."
+;;
+macosx)
+    echo "You like Roman numerals."
+;;
+windows)
+    echo "Time to check for a virus."
+;;
+amigados)
+    echo "AmigaDOS will never die."
+;;
+beos)
+    echo "Count yourself lucky."
+;;
+*) 
+    echo "Why did you choose $os?"
+;;
+esac

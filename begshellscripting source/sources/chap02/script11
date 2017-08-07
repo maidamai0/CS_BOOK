@@ -1,0 +1,3 @@
+VARIABLE1="A value"
+echo "My variable holds: $VARIABLE1"
+

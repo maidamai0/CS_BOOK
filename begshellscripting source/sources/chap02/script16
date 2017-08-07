@@ -1,0 +1,4 @@
+echo -n "Please enter the new position: "
+read POSITION
+echo
+echo "Congratulations, $POSITION!"

@@ -1,0 +1,9 @@
+# Locks down file permissions.
+
+for filename in *
+do
+
+    # Lock down the file permissions.
+    chmod g-rwx,o-rwx $filename
+
+done

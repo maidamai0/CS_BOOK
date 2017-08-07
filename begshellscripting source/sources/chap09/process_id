@@ -1,0 +1,18 @@
+
+echo "The current process ID is $$."
+
+if [ "$!" != "" ]
+then
+    echo "The ID of the last-run background process is $!."
+else
+    echo "No background process ID stored in" '$!'
+fi
+
+# Now, run something in the background.
+ls > /dev/null &
+if [ "$!" != "" ]
+then
+    echo "The ID of the last-run background process is $!."
+else
+    echo "No background process ID stored in" '$!'
+fi

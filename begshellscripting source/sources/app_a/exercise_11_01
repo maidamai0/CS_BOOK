@@ -1,0 +1,26 @@
+# Assumes $1, first command-line argument,
+# names directory to list.
+
+directory=$1
+
+if [ ! -e $directory ]
+then
+    echo "Error: You must pass in the name of a directory."
+    exit -1
+fi
+
+cd $directory
+for filename in *
+do
+    echo -n $filename
+
+    if [ -d $filename ] 
+    then
+        echo "/"
+    elif [ -x $filename ] 
+    then
+        echo "*"
+    else
+        echo 
+    fi
+done

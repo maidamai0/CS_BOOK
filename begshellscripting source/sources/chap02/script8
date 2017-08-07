@@ -1,0 +1,3 @@
+echo "I will guess your user name."
+echo -n "It is: "
+whoami

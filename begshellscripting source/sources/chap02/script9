@@ -1,0 +1,3 @@
+echo "Hmm...determining operating system..."
+echo -n "This computer runs: "
+uname

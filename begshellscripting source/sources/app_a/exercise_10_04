@@ -1,0 +1,95 @@
+#!/bin/sh
+#
+# This script takes at minimum one argument: the time that the alarm should go off
+# using the format hh:mm, it does only rudimentary checks that the format is 
+# specified is correct. An optional second argument specifies what should be done 
+# when the alarm goes off. If no second argument is supplied, a simple shell bell 
+# is used.
+#
+# Be sure this bell works before you go to sleep!
+#
+# If the second argument is included and the alarm method is more than one command,
+# it will need to be enclosed in quotes.
+
+# First check that the required minimum arguments have been supplied, and that
+# the time is of the format hh:mm. If not exit with the proper usage.
+
+if [ $# -eq 0 ]
+then
+        echo "Usage: $0 hh:mm [alarm-method]"
+        echo "eg. $0 13:30 \"mplayer /media/music/dr_octagon/01.mp3\" "
+        exit 1
+else
+        alarm_time="$1"
+
+        # Check that the format for the alarm time is correct, the first digit
+        # should be a number between 0-2, followed by a colon, and ending with a 
+        # number between zero and 60. NB: This check is not perfect.
+
+        if [ ! `echo "$alarm_time" | sed -n '/[0-2][[:digit:]]:[0-60]/p'` ]
+        then
+                echo "Incorrect time specified, please use format hh:mm"
+                exit 1
+        fi
+
+fi
+
+# Set the number of seconds in a minute
+seconds=1
+
+# Test to see if a second argument is supplied, if it is not then set the
+# bell to a shell bell. The -e argument to echo specifies that echo should
+# enable interpretation of the backslash character, and \a is defined in
+# the echo(1) man page as a bell.
+
+if [ ! $2 ]
+then
+        bell="echo -e \a"
+else
+
+        bell=$2
+fi
+
+# The wait_between_checks function sleeps for the specified number of
+# seconds and then calls the check_time function when it is done sleeping.
+# This makes the script only check the time once a minute, instead of constantly.
+
+wait_between_checks ()
+{
+        sleep $seconds
+        check_time
+}
+
+# The check_time function looks at the current time (in hh:mm format) and
+# compares it to the $alarm_time, if they match, then it calls the wakeup function
+# otherwise it goes back to sleep by calling the wait_between_checks function 
+again.
+
+check_time ()
+{
+        current_time=`date +%H:%M`
+
+        if [ "$current_time" = "$alarm_time" ]
+        then
+                wakeup
+        else
+                wait_between_checks
+        fi
+
+}
+
+# The wakeup function simply rings the bell over and over until the script
+# is interrupted.
+
+wakeup ()
+{
+        echo -n "Wake up! Hit control-c to stop the madness"
+        $bell
+        sleep 1
+        wakeup
+}
+
+# Finally the main body of the script simply starts things up by calling the
+# wait_between_checks function
+
+wait_between_checks

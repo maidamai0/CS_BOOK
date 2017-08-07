@@ -1,0 +1,8 @@
+
+DIR=/
+ls $DIR > /dev/null
+echo "Return code from [ls $DIR] was $?."
+
+DIR=/foobar
+ls $DIR > /dev/null 2>&1
+echo "Return code from [ls $DIR] was $?."

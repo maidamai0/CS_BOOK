@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# Starts networking over a USB port for a connected device.
+# Turn the device on, plug in the Yopy PDA, and then run this
+# script.
+
+/sbin/ifconfig usb0 192.168.1.1
+echo "Yopy is on 192.168.1.1"

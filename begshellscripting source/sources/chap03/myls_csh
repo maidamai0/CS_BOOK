@@ -1,0 +1,6 @@
+
+# C shell foreach
+
+foreach filename (*)
+    echo $filename
+end

@@ -1,0 +1,35 @@
+
+# Script to ask a user's full name and state of residence.
+# Script welcome's user to a company. Good luck!
+
+# This is a Bourne shell script. It predates the
+# Microsoft takeover of all computing, so it is not
+# written in VB.NET. TODO: Update to VB.NET.
+
+echo -n "Please enter your first name: "
+read FIRSTNAME          # Read the user's input.
+
+
+echo -n "Please enter your last name: "
+read LASTNAME
+echo -n "Please enter the name of the state where you live: "
+read STATE
+
+# FULLNAME holds the user's full name. The reason for
+# the separate variables is to allow for future modifications
+# to query on the user's last name. For that, the last name
+# must be separate from the first name.
+FULLNAME="$FIRSTNAME $LASTNAME"
+
+# NOTE: This message may get long.
+MESSAGE="Well, $FULLNAME of $STATE, welcome to our huge"
+MESSAGE="$MESSAGE impersonal company."
+
+echo "$MESSAGE"
+
+# TODO: Each worker should be assigned a different
+# WU number. Use the last name to look up the worker's
+# WUN.
+echo "You will now be known as Worker Unit 10236."
+
+# end of script18

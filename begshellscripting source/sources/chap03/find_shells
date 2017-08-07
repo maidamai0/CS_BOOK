@@ -1,0 +1,44 @@
+
+echo "Checking your command path for shells..."
+
+if (sh -c exit > /dev/null 2> /dev/null) then
+   echo "sh found."
+else
+    echo "sh NOT found."
+fi
+
+if (bash -c exit  > /dev/null 2> /dev/null) then
+   echo "bash found."
+else
+    echo "bash NOT found."
+fi
+
+if (ksh -c exit  > /dev/null 2> /dev/null ) then
+   echo "ksh found."
+else
+    echo "ksh NOT found."
+fi
+
+if (csh -c exit  > /dev/null 2> /dev/null ) then
+   echo "csh found."
+else
+    echo "csh NOT found."
+fi
+
+if (tcsh -c exit  > /dev/null 2> /dev/null ) then
+   echo "tcsh found."
+else
+    echo "tcsh NOT found."
+fi
+
+if (zsh -c exit  > /dev/null 2> /dev/null ) then
+   echo "zsh found."
+else
+    echo "zsh NOT found."
+fi
+
+if (ash  -c exit > /dev/null 2> /dev/null ) then
+   echo "ash found."
+else
+    echo "ash NOT found."
+fi

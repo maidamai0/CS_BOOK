@@ -1,0 +1,23 @@
+#!/bin/sh
+# Retrives a document from a web server.
+# You need to pass the URL to test.
+# Data output is ONE value: the number of bytes
+# downloaded.
+
+stats=`wget -nv "$url" 2>&1 | cut -d' ' -f3,5 | tr "\[\"]" " " | tr -d ","`
+
+stats=`wget -nv  -O - "$1" 2>&1 > /dev/null | \
+   cut -d' ' -f3 | \
+   tr "\[\]" " " | \
+   tr -d ","
+`
+
+set $stats
+
+bytes=$1
+
+echo $bytes
+echo 0
+
+echo `uptime`
+echo `hostname`

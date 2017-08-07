@@ -1,0 +1,18 @@
+#! /bin/sed -f
+
+1 i\
+<html>\
+<head><title>Converted with sed</title></head>\
+<body bgcolor=”#ffffff”>\
+<pre>\
+
+s/&/\&amp;/g
+s/</\&lt;/g
+s/>/\&gt;/g
+s/trout/<b>trout<\/b>/g
+s/^$/<p>/g
+
+$ a\
+</pre>\
+</body>\
+</html>

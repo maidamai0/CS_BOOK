@@ -1,0 +1,2 @@
+DIRECTORY=/usr/local
+ls $DIRECTORY

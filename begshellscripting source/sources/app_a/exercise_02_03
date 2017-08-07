@@ -1,0 +1,102 @@
+
+# See if you can come up with more statements than this.
+# This is ugly. In case we forget, this script outputs:
+# A man, a plan, a canal, Panama
+
+a=A
+echo -n "$a"
+unset a
+a=" "
+echo -n "$a"
+unset a
+a="m"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="n"
+echo -n "$a"
+unset a
+a=","
+echo -n "$a"
+unset a
+a=" "
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a=" "
+echo -n "$a"
+unset a
+a="p"
+echo -n "$a"
+unset a
+a="l"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="n"
+echo -n "$a"
+unset a
+a=","
+echo -n "$a"
+unset a
+a=" "
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a=" "
+echo -n "$a"
+unset a
+a="c"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="n"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="l"
+echo -n "$a"
+unset a
+a=","
+echo -n "$a"
+unset a
+a=" "
+echo -n "$a"
+unset a
+a="P"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="n"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="m"
+echo -n "$a"
+unset a
+a="a"
+echo -n "$a"
+unset a
+a="."
+echo -n "$a"
+unset a
+
+echo
+
+

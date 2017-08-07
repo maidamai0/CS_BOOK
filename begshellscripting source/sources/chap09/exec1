@@ -1,0 +1,6 @@
+
+# Test of exec.
+
+exec echo "Hello from exec. Goodbye."
+
+echo "This line will not get output."

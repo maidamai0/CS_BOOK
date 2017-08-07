@@ -1,0 +1,12 @@
+# Set my_var without exporting.
+MY_VAR="Tempest"
+
+echo -n "No export: "
+sh echo_myvar
+
+# Now, export and try again.
+
+echo -n "export:    "
+export MY_VAR
+
+sh echo_myvar

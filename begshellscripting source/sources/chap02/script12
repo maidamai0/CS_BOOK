@@ -1,0 +1,4 @@
+VARIABLE1=Cool
+VARIABLE2="this system runs "
+echo -n "$VARIABLE1 $VARIABLE2"
+uname

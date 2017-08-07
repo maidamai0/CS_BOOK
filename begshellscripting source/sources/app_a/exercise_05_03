@@ -1,0 +1,31 @@
+# If the user forgets to pass the command-line
+# arguments, fill in defaults.
+
+pithy_statement="Action, urgency, excellence"
+
+if [ $# -ge 1 ] 
+then
+    date_required=$1
+
+    if [ $# -ge 2 ]
+    then
+        pithy_statement=$2
+    fi   
+else
+    date_required=today
+fi
+
+
+wall <<EndOfText
+Please complete all TPS reports and have them
+on my desk by EOB $date_required.
+
+Your cooperation in this matter helps the smooth
+flow of our departmental structure.
+
+$pithy_statement!
+-Dick
+EndOfText
+
+echo "Message sent"
+

@@ -1,0 +1,11 @@
+
+# Another example to look at files in a directory and
+# print out the file names.
+
+for filename in *
+do
+    # Show the amount of bytes in each file
+    # with the file name. The wc command
+    # outputs both.
+    wc -c $filename
+done

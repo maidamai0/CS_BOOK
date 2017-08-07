@@ -1,0 +1,86 @@
+
+# String test.
+
+
+echo "**** String comparisons."
+string="In Xanadu did Kublai Khan..."
+
+echo -n "test of a string: "
+if (test "$string") then
+   echo "We have a non-null \$string. Expected."
+else
+    echo "\$string is null."
+fi
+
+echo -n "test of a string: "
+if (test $notset) then
+    echo "How did \$notset get a value?"
+else
+    echo "\$notset has not been set. Expected."
+fi
+
+echo -n "test -z: "
+if (test -z $notset) then   
+    echo "Length of \$notset is zero. Expected."
+else
+    echo "Length of \$notset is NOT zero."
+fi
+
+# Note quotes around multi-word string.
+echo -n "test -z: "
+if (test -z "$string") then   
+    echo "Length of \$string is zero."
+else
+    echo "Length of \$string is NOT zero. Expected."
+fi
+
+echo -n "test -n: "
+if (test -n "$string") then
+    echo "Length of \$string is NOT zero. Expected."
+else
+    echo "Length of \$string is zero."
+fi
+
+
+echo -n "test =: "
+if (test "$string" = "$string") then
+    echo "Strings are equal. Expected."
+else
+    echo "Strings are not equal."
+fi
+
+# Tricky one. Notice the difference.
+echo -n "test =: "
+if (test "$string" = "$string ") then
+    echo "Strings are equal. "
+else
+    echo "Strings are not equal. Expected"
+fi
+
+
+echo -n "test =: "
+if (test "$string" = "In Xanadu did Kublai Khan...") then
+    echo "Strings are equal. Expected."
+else
+    echo "Strings are not equal."
+fi
+
+
+echo -n "test !=: "
+if (test "$string" != "In Xanadu did Kublai Khan...") then
+    echo "Strings are equal."
+else
+    echo "Strings are not equal. Expected."
+fi
+
+echo -n "test !=: "
+if (test "$string" != "$notset" ) then
+    echo "Strings are not equal. Expected."
+else
+    echo "Strings are equal."
+fi
+
+echo
+
+
+

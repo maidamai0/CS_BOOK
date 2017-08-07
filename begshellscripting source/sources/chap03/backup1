@@ -1,0 +1,10 @@
+
+# Example backup script, for files with names
+# ending in .doc
+#
+
+for filename in *.doc
+do
+    echo "Copying $filename to $filename.bak"
+    cp $filename $filename.bak    
+done

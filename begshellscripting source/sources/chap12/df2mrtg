@@ -1,0 +1,16 @@
+#!/bin/sh
+# Gets system disk usage.
+# Pass file system, such as / as $1
+
+# Save argument before we overwrite it.
+filesystem=$1
+
+stats=`df -k $filesystem | tail -1`
+
+set $stats  
+
+echo $3   # Used 
+echo $4   # Available
+
+echo `uptime`
+echo `hostname`

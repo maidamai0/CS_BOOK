@@ -1,0 +1,13 @@
+# Assumes each command-line argument
+# names a directory to list.
+
+for directory in $*
+do
+    echo "$directory:"
+    cd $directory
+    for filename in *
+    do
+        echo $filename
+    done
+    echo
+done

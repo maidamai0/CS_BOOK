@@ -1,0 +1,11 @@
+# This example extends the myls script.
+
+# Change to the directory
+# so the file listing is all relative file names.
+cd /usr/local    
+
+# List the files.
+for filename in *
+do
+    echo $filename
+done

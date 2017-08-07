@@ -1,0 +1,12 @@
+cut -d: -f1,5,6,7 /etc/passwd | 
+    grep -v sbin | 
+    grep home    | 
+    grep sh      | 
+    sort         |  
+    cut -d: -f1,2,4 > users.txt
+
+
+awk -F':' ' { printf( "%-12s %-40s\n", $1, $2 )   } ' users.txt
+
+# Clean up the temporary file.
+/bin/rm -rf users.txt

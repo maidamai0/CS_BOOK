@@ -1,0 +1,25 @@
+# This example extends the myls script.
+
+echo -n "Please enter the directory to list: "
+read DIRECTORY
+
+# Change to this directory
+# so the file listing is all relative file names.
+
+cd $DIRECTORY      
+
+# List the files.
+echo "Listing $DIRECTORY"
+
+for filename in *
+do
+    if [ -d $filename ] 
+    then
+        echo "$filename/"
+    elif [ -x $filename ]
+    then
+        echo "$filename*"
+    else
+        echo $filename
+    fi
+done

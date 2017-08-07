@@ -1,0 +1,4 @@
+echo -n "A man,"
+echo -n " a plan,"
+echo -n " a canal,"
+echo " Panama."

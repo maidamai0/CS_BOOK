@@ -1,0 +1,13 @@
+#!/bin/sh
+# Gets system load average.
+
+stats=`uptime | cut -d',' -f2,3`
+set $stats  ; load=$5
+
+users=$1
+
+echo $load
+echo $users
+
+echo `uptime`
+echo `hostname`

@@ -1,0 +1,35 @@
+
+# Use of variables within a here file.
+
+# If the user forgets to pass the command-line
+# arguments, fill in defaults.
+
+if [ $# -lt 1 ] 
+then
+    date_required=today
+else
+    date_required=$1
+fi
+
+if [ $# -lt 2 ] 
+then
+    pithy_statement="Action, urgency, excellence"
+else
+    pithy_statement=$2
+fi
+
+
+
+
+wall <<EndOfText
+Please complete all TPS reports and have them
+on my desk by EOB $date_required.
+
+Your cooperation in this matter helps the smooth
+flow of our departmental structure.
+
+$pithy_statement!
+-Dick
+EndOfText
+
+echo "Message sent"

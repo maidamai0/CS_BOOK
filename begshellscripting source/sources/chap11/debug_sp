@@ -1,0 +1,14 @@
+
+# Shows an error.
+echo -n "Please enter the amount of purchase: "
+read amount
+echo
+
+echo -n "Please enter the total sales tax: "
+read rate
+echo
+
+if [$rate -lt 3 ]
+then
+    echo "Sales tax rate is too small."
+fi

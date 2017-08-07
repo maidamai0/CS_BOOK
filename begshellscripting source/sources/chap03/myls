@@ -1,0 +1,8 @@
+
+# Example to look at files in a directory and
+# print out the file names.
+
+for filename in *
+do
+    echo $filename
+done

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Assumes $1, first command-line argument,
+# names directory to list.
+
+cd $1
+for filename in *
+do
+    echo $filename
+done

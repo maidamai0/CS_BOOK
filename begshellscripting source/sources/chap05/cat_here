@@ -1,0 +1,28 @@
+# Uses a here file with the cat command.
+
+cat <<HERE
+This is a notice that the official company dress code policy
+has changed. All employees are required to follow the new
+policy.
+
+We don't want to make a big deal about the policy, which has
+been in effect since last September, but it appears that some
+people have not been following the new guidelines. Because of
+this, we felt it appropriate to introduce the new guidelines
+for all employees.
+
+The new policy is available on the company InfoCENTRE. You
+will need level 3 security access to view the new company dress 
+code  policy. All employees should view this policy TODAY. Be 
+careful, though, not to overload the company InfoCENTRE server.
+If you have trouble logging in to the secure company InfoCENTRE
+site, please call the 800 number for the internal security 
+hotline. This number is available on the secure company InfoCENTRE.
+
+You won't be sent home for violating the company dress code policy,
+but you will need to work out any issues with your supervisor.
+HERE
+
+# Here file has ended, so the shell expects commands.
+
+echo "Please follow this policy immediately."

@@ -1,0 +1,12 @@
+
+wall <<EndOfText
+Please complete all TPS reports and have them
+on my desk by EOB today.
+
+Your cooperation in this matter helps the smooth
+flow of our departmental structure.
+
+-Dick
+EndOfText
+
+echo "Message sent"

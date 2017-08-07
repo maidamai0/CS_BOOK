@@ -1,0 +1,8 @@
+#unset SHELL
+
+if [ "$SHELL" == "" ] 
+then
+    echo "SHELL not set."
+    echo "Bailing out."
+    exit -1
+fi

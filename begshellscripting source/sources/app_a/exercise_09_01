@@ -1,0 +1,3 @@
+echo "The current process ID is $$."
+echo "Press return to continue."
+read var

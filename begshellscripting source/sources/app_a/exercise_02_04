@@ -1,0 +1,21 @@
+DIRECTORY=/usr/local
+LS=ls
+CMD="$LS $DIRECTORY"
+$CMD     # Note how the command is executed indirectly.
+
+
+# Add a -1 (one) command-line option.
+DIRECTORY=/usr/local
+LS=ls
+LS_OPTS="-1"
+CMD="$LS $LS_OPTS $DIRECTORY"
+$CMD
+
+
+# Even more indirect script.
+DIRECTORY=/usr/local
+LS=ls
+LS_OPTS="-1"
+LS_CMD="$LS $LS_OPTS"
+CMD="$LS_CMD $DIRECTORY"
+$CMD

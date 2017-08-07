@@ -1,0 +1,31 @@
+# If the user forgets to pass the command-line
+# arguments, fill in defaults.
+
+case $# in
+0)
+    pithy_statement="Action, urgency, excellence"
+    date_required=today
+    ;;
+1)
+    pithy_statement="Action, urgency, excellence"
+    date_required=$1
+    ;;
+*)
+    pithy_statement=$2
+    date_required=$1
+    ;;
+esac
+
+
+wall <<EndOfText
+Please complete all TPS reports and have them
+on my desk by EOB $date_required.
+
+Your cooperation in this matter helps the smooth
+flow of our departmental structure.
+
+$pithy_statement!
+-Dick
+EndOfText
+
+echo "Message sent"

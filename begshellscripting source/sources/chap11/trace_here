@@ -1,0 +1,24 @@
+
+# Using bc for math with a here document.
+# Calculates sales tax.
+
+echo -n "Please enter the amount of purchase: "
+read amount
+echo
+
+echo -n "Please enter the total sales tax: "
+read rate
+echo
+
+result=$(bc << EndOfCommands
+scale=2   /* two decimal places */
+
+tax = ( $amount * $rate ) / 100
+total=$amount+tax
+
+print total
+
+EndOfCommands
+)
+
+echo "The total with sales tax is: \$ $result on `date`."

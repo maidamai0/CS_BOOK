@@ -1,0 +1,11 @@
+#!/bin/sh 
+
+# Checks to see if a given process is running.
+# Pass in a command-line argument of the pattern
+# to look for. The script will output all the
+# occurances.
+
+pattern=$1
+
+ps -e | grep -v $$ | grep $pattern | awk '{print $4}'
+

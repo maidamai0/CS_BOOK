@@ -1,0 +1,6 @@
+
+# Nested backticks.
+
+tock=`tick=\`expr 5 \* 10\`; expr $tick + 10`
+
+echo "tock = $tock."

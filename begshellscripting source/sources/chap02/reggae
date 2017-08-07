@@ -1,0 +1,2 @@
+#!/bin/sh
+xmms $HOME/multi/mp3/reggae_playlist.m3u 

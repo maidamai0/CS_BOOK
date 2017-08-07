@@ -1,0 +1,10 @@
+
+echo -n "Checking for a C shell: "
+
+if (csh -c exit > /dev/null 2> /dev/null ) then
+   echo "csh found."
+elif (tcsh -c exit > /dev/null 2> /dev/null ) then
+    echo "tcsh found, which works like csh."
+else
+    echo "csh NOT found."
+fi

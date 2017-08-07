@@ -1,0 +1,9 @@
+for arg in $*
+do
+    if [ "$arg" != "" ]
+    then
+        echo "Arg: $arg"
+    fi
+done
+
+echo "Total args: $#"

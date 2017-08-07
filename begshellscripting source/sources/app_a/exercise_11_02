@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# Using bc for math,
+# calculates sales tax.
+
+echo -n "Please enter the amount of purchase: "
+read amount
+echo
+
+echo -n "Please enter the total sales tax rate: "
+read rate
+echo 
+
+result=$( echo "
+scale=2; tax=$amount*$rate/100.00;total=$amount+tax;print total" | bc )
+
+if [ $( expr "$result > 200" ) ]
+then
+    echo You could qualify for a special free shipping rate.
+    echo -n Do you want to? "(yes or no) "
+    read shipping_response
+    if [ $shipping_response -eq "yes" ]
+    then
+        echo "Free shipping selected."
+    fi
+fi
+
+echo "The total with sales tax = \$ $result."
+echo "Thank you for shopping with the Bourne Shell."

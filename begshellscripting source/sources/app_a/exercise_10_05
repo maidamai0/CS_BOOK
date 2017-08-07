@@ -1,0 +1,11 @@
+#!/bin/sh
+
+recurarrg () {
+  if [ $# -gt 0 ] ; then
+   echo $1
+   shift
+   recurarrg "$@"
+  fi
+}
+
+recurarrg one two three four

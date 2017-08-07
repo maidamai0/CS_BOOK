@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Checks for the USB version support, typically 1.1 or
+# 2.0, for USB ports on a given Linux system.
+#
+# NOTE: You must be logged in as root to run this script.
+
+echo "USB support:"
+/sbin/lsusb -v | grep bcdUSB |  awk '{print $2}'

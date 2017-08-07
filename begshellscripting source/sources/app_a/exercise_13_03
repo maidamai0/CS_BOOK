@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# Output warnings if a given file system is not mounted.
+# Oftentimes, this could be due to a network issue or
+# a hard disk failure.
+
+# Pass the name of the file system or the mount point
+# as the first command-line argument.
+filesystem=$1
+
+df "$filesystem" > /dev/null 2&>1
+result=$?
+
+if [ "$result" == 0 ]
+then
+    entry=`df -k $filesystem | tail -1`  
+
+    # Split out the amount of space free as well as in-use percentage.
+    free=`echo $entry | cut -d' ' -f4`
+    in_use=`echo $entry | cut -d' ' -f5 | cut -d'%' -f1 `
+
+    echo "Filesystem $filesystem is $in_use% used with $free KB free."
+else
+    echo "ERROR: Filesystem $filesystem not found."
+fi

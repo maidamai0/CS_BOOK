@@ -1,0 +1,6 @@
+
+if (ls > /dev/null) then
+   echo "ls is true"
+else
+    echo "ls is false"
+fi

@@ -1,0 +1,35 @@
+# Using expr for math.
+# Calculates sales tax.
+
+echo -n "Please enter the amount of purchase: "
+read amount
+echo
+
+echo -n "Please enter the total sales tax: "
+read rate
+echo
+
+tax_base=`expr $amount \* $rate`
+
+
+tax=`expr $tax_base / 100`
+
+total=`expr $amount + $tax`
+
+result=$total
+
+echo "The total with sales tax is: \$ $result."
+When you run this script, you'll see:
+$ sh exercise_09_03
+Please enter the amount of purchase: 107
+ 
+Please enter the total sales tax: 7
+ 
+The total with sales tax is: $ 114.
+Compare this with the math2 script:
+$ sh math2
+Please enter the amount of purchase: 107
+ 
+Please enter the total sales tax: 7
+ 
+The total with sales tax is: $ 114.49.

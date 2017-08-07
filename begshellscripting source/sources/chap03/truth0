@@ -1,0 +1,5 @@
+if (sh return0) then
+   echo "Command returned true."
+else
+    echo "Command returned false."
+fi

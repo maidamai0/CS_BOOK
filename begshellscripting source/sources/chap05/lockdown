@@ -1,0 +1,31 @@
+
+# Locks down file permissions.
+
+for filename in *
+do
+    # Initialize all permissions.
+    r=""
+    w=""
+    x=""
+
+    # Check to preserve existing permissions.
+
+    if [ -r $filename ] 
+    then
+        r="r"
+    fi
+
+    if [ -w $filename ] 
+    then
+        w="w"
+    fi
+
+    if [ -x $filename ] 
+    then
+        x="x"
+    fi
+
+    # Lock down the file permissions.
+    chmod u+$r$w$x,g-rwx,o-rwx $filename
+
+done

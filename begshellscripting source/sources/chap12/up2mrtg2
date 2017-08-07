@@ -1,0 +1,11 @@
+#!/bin/sh
+# Gets system uptime.
+upt=`</proc/uptime`
+
+for line in $upt
+do
+    echo "$line"
+done
+echo `uptime`
+echo `hostname`
+

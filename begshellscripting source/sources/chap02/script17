@@ -1,0 +1,13 @@
+echo -n "Please enter your first name: "
+read FIRSTNAME
+echo -n "Please enter your last name: "
+read LASTNAME
+echo -n "Please enter the name of the state where you live: "
+read STATE
+
+FULLNAME="$FIRSTNAME $LASTNAME"
+MESSAGE="Well, $FULLNAME of $STATE, welcome to our huge"
+MESSAGE="$MESSAGE impersonal company."
+
+echo "$MESSAGE"
+echo "You will now be known as Worker Unit 10236."

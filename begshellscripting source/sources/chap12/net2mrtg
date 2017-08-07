@@ -1,0 +1,14 @@
+#!/bin/sh
+# Network status.
+# Pass name of network interface, such as eth0, as $1.
+interface=$1    # Save value, because we overwrite $1
+
+stats=`netstat -i | grep $interface | tail -1`
+
+set $stats 
+echo $4
+echo $8
+
+echo `uptime`
+echo `hostname`
+

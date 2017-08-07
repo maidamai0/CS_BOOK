@@ -1,0 +1,35 @@
+
+# Driving an interactive program, ftp.
+
+# Validate number of arguments.
+if [ $# -lt 2 ]
+then
+    echo "Error, usage is:"
+    echo "ftpget hostname filename [directory]."    
+    exit -1
+fi
+
+hostname=$1
+filename=$2
+
+directory="."  # Default value
+
+if [ $# -ge 3 ]
+then
+    directory=$3
+fi
+
+
+ftp <<EndOfSession
+open $hostname
+
+
+
+
+cd $directory
+get $filename
+quit
+
+EndOfSession
+
+echo "FTP session ended."

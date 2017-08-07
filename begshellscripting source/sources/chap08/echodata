@@ -1,0 +1,6 @@
+#!/bin/sh
+
+echo -n "When is the project due? "
+read DUE
+echo
+echo "Due $DUE."

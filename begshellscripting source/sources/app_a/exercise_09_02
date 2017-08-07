@@ -1,0 +1,6 @@
+echo "Using a wildcard glob in a for loop."
+cd /usr/local
+for filename in *
+do
+    echo $filename
+done

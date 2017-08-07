@@ -1,0 +1,18 @@
+
+# Shows another error, harder to find.
+
+# Using bc for math.
+# Calculates sales tax.
+
+echo -n "Please enter the amount of purchase: "
+read amount
+echo
+
+echo -n "Please enter the total sales tax: "
+read rate
+echo
+
+result=$( echo "
+scale=2; tax=$amount\*$rate/100.00;total=$amount+tax;print total" | bc )
+
+echo "The total with sales tax is: \$ $result."

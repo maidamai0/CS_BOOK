@@ -1,0 +1,13 @@
+#!/bin/sh
+
+# Runs the Apache Axis TCP monitor as a proxy between
+# a web client and server. The tcpmon program then
+# displays all the HTTP traffic between the client
+# and server.
+#
+AXIS=$HOME/java/xml/axis-1_1RC2/lib ; export AXIS
+
+CLASSPATH=$AXIS/axis.jar:$AXIS/log4j-1.2.4.jar ; export CLASSPATH
+
+# java org.apache.axis.utils.tcpmon [listenPort targetHost targetPort]
+java -Xmx400m org.apache.axis.utils.tcpmon 28080 vodka.liquor.vod 85

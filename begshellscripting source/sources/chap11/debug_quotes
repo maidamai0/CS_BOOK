@@ -1,0 +1,7 @@
+
+# Shows an error.
+
+echo "USER=$USER
+echo "HOME=$HOME"
+echo "OSNAME=$OSNAME"
+

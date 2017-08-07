@@ -1,0 +1,10 @@
+# Has an error in a for loop.
+#
+
+for filename in *.doc
+do
+    echo "Copying $filename to $filename.bak"
+    cp $filename $filename.bak    
+# done
+
+echo "Completed backup operation on `date`."

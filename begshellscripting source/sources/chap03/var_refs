@@ -1,0 +1,29 @@
+
+# Set the initial value.
+myvar=abc
+
+echo "Test 1 ======"
+echo $myvar        # abc
+echo ${myvar}      # same as above, abc
+echo {$myvar}      # {abc}
+
+echo "Test 2 ======"
+echo myvar         # Just the text myvar
+echo "myvar"       # Just the text myvar
+echo "$myvar"      # abc
+echo "\$myvar"     # $myvar
+
+echo "Test 3 ======"
+echo $myvardef     # Empty line
+echo ${myvar}def   # abcdef
+
+echo "Test 4 ======"
+echo $myvar$myvar      # abcabc
+echo ${myvar}${myvar}  # abcabc
+
+echo "Test 5 ======"
+# Reset variable value, with spaces
+myvar="a    b    c"    
+echo "$myvar"          # a    b    c
+echo $myvar            # a b c
+

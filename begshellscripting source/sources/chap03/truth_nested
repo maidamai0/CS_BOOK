@@ -1,0 +1,14 @@
+
+
+if (true) then
+
+    # Only if the first condition is true will
+    # we get here.
+
+    if (false) then 
+        echo "The universe is wrong."
+    else
+        echo "All is well in the universe."
+    fi
+fi
+
